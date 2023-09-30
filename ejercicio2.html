@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="ejercicio2.css">
+    <title>Mi primera página web</title>
+    <script>
+        function pedirNombre() {
+            //Se inicia la variable nombre con un valor en blanco
+            var nombre = "";
+            //Mientras el usuario pulse el botón cancelar o introduzca la información en blanco se solicitará el nombre
+            while (nombre == "" || nombre == null) {
+                nombre = prompt("Indica tu nombre");
+                //Botón aceptar sin haber escrito nombre
+                if (nombre == "") {
+                    window.alert("⚠ No puedes dejar el nombre en blanco")
+                }
+                //Botón cancelar. Si se pulsa cancelar obtenemos un valor null
+                if (nombre == null) {
+                    window.alert("⚠ No se permite opción de cancelar sin haber introducido el nombre")
+                }
+            }
+            alert("Bienvenid@ al curso de javascript " + nombre + " vamos a crear el primer documento de JavaScript");
+            //Tras dar la bienvenida al usuario abre el vsc en su versión web en una nueva pestaña
+            window.open("https://vscode.dev/", "_blank");
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="contenedor1">
+            <img class="logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/240px-JavaScript-logo.png"
+                alt="logo" title="logo_javascript">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menubutton"><a href="https://es.wikipedia.org/wiki/JavaScript" target="_blank">Acerca de
+                        JS</a></li>
+                <li class="menubutton"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript"
+                        target="_blank">Documentación</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedor2">
+            <h1 class="title">Mi primera página web con JavaScript</h1>
+            <img src="https://25.media.tumblr.com/tumblr_m1exllBs8d1qg0jdoo1_400.gif">
+            <form>
+                <!-Al hacer click en el botón se llama a la función pedirNombre->
+                    <input type="button" value="Pulsa aquí!!! 🫵🏼" name="entrar" class="button"
+                        onclick="pedirNombre()">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div>
+            Desarrollo de Aplicaciones Web | Linkia FP<br>
+            Octubre 2003 | Francisco Javier Martínez
+        </div>
+    </footer>
+</body>
+
+</html>
